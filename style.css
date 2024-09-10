@@ -8,44 +8,23 @@
 
 html {
     font-family: 'JetBrains Mono', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 16px;
     line-height: 1.5;
 }
 
-.navbar {
-    display: flex;
-    padding: 20px 5%;
-    background-color: whitesmoke;
-    justify-content: space-between;
-    align-items: center; /* This ensures the items are vertically centered */
-}
-
-.nav-links, .nav-link.home {
-    list-style: none; /* Removes default list styling */
-    padding: 0; /* Removes default padding */
-}
-
-.nav-links li, .nav-link.home li {
-    display: inline-block; /* Displays the list items inline */
-    margin-right: 30px; /* Adds some space between the links */
-}
-
-.nav-link.home li {
-    margin-right: 0; /* Removes the right margin for the "Home" link for aesthetic purposes */
-}
-
-.nav-links li a:hover, .nav-link.home li a:hover {
-    color: #31708f; /* Change the color on hover */
-    text-decoration: underline; /* Optionally add an underline to highlight the link */
-}
-
 body {
-    position: relative; /* Makes the body a reference point for absolute positioning */
     min-height: 100vh; /* Ensures the body takes at least the full height of the viewport */
-    margin: 0; /* Removes default margin */
 }
 
 .container {
-    outline: auto;
-    margin: 0 10%;
+    outline: 2px red dashed;
+    margin: 2rem 20%;
+    padding: 1rem;
+}
+
+p {
+    margin-top: 1.5rem;
+}
+
+.highlight {
+    font-weight: bold;
 }
