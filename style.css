@@ -33,25 +33,12 @@ main p {
 
 @media (max-width: 1440px) {
     main {
-        margin: 0% 5%;
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        flex: 1;
-    }
-}
-
-.section {
-    display: flex;
+    margin: 0% 5%;
     align-items: center;
-}
-
-.center {
-    justify-items: center;
-}
-
-.highlight {
-    font-weight: bold;
+    justify-content: center;
+    display: flex;
+    flex: 1;
+    }
 }
 
 .navbar {
@@ -90,24 +77,84 @@ main p {
     gap: 50%;
 }
 
-/* Flex container for image and text */
+/* Hamburger Button */
+.hamburger {
+    display: none; /* Hidden on larger screens */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Show the hamburger button */
+    }
+
+    .navbar-right {
+        display: none; /* Hide links by default */
+        flex-direction: column; /* Stack links vertically */
+        gap: 1rem; /* Add spacing between links */
+        background-color: #edf5fd; /* Optional background for the dropdown */
+        position: absolute; /* Dropdown menu */
+        top: 100%; /* Position below the navbar */
+        right: 15%; /* Align with the navbar padding */
+        padding: 1rem;
+        border: 1px solid #999999;
+        border-radius: 5px;
+    }
+
+    .navbar-right.active {
+        display: flex; /* Show the menu when active */
+    }
+}
+
 .flex {
     display: flex;
     align-items: flex-start;
     gap: 2rem;
     margin: 2rem;
     align-items: center;
-    align-items: stretch;
+    /* align-items: stretch; */
     flex-wrap: wrap;
 }
 
 .flex img {
     margin-top: 1rem;
-    height: 480px;
+    max-height: 480px;
     width: auto;
     border-radius: 10%;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);   
 }
+
+@media (max-width: 1024px) {
+    .flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .text-content {
+        order: 1;
+    }
+    .flex img {
+        order: 2;
+    }
+}
+
+.section {
+    display: flex;
+    align-items: center;
+}
+
+.center {
+    justify-items: center;
+}
+
+.highlight {
+    font-weight: bold;
+}
+
 
 .flex-col {
     flex-direction: column;
@@ -117,8 +164,7 @@ main p {
     flex: 1;
 }
 
-
-.outline {
+/* .outline {
     outline: 2px red dashed;
 }
 .outline1 {
@@ -132,4 +178,4 @@ main p {
 }
 .outline4 {
     outline: 2px pink dashed;
-}
+} */
