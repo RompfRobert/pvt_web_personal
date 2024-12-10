@@ -1,9 +1,9 @@
+/* Reset and Global Styles */
 *,
 *::before,
 *::after {
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box; */
 }
 
 html {
@@ -16,7 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
-    height: 100vh; /* Full height of the viewport */
+    height: 100vh;
 }
 
 main {
@@ -33,21 +33,23 @@ main p {
 
 @media (max-width: 1440px) {
     main {
-    margin: 0% 5%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex: 1;
+        margin: 0% 5%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex: 1;
     }
 }
 
+/* Navbar Styling */
 .navbar {
-    display: flex; /* Aligns items horizontally */
-    justify-content: space-between; /* Separates left and right sections */
-    align-items: center; /* Vertically aligns items */
-    padding: 1rem 15%; /* Adds spacing inside the navbar */
-    background-color: #edf5fd; /* Background color for the navbar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 15%;
+    background-color: #edf5fd;
     border-bottom: 1px solid #999999;
+    position: relative;
 }
 
 .navbar a {
@@ -66,7 +68,6 @@ main p {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    /* gap: 1em; */
 }
 
 .navbar-right {
@@ -74,49 +75,52 @@ main p {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    gap: 50%;
+    gap: 2rem; /* Adjust spacing between links */
+}
+
+.navbar-right.active {
+    display: flex; /* Show links when active */
+    flex-direction: column; /* Stack links vertically for dropdown */
+    gap: 1rem; /* Add spacing between links */
+    position: absolute; /* Dropdown positioning */
+    top: 100%; /* Position below navbar */
+    right: 15%; /* Align with navbar padding */
+    background-color: #edf5fd;
+    padding: 1rem;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Hamburger Button */
 .hamburger {
-    display: none; /* Hidden on larger screens */
+    display: none;
     background: none;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
 }
 
-/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
     .hamburger {
-        display: block; /* Show the hamburger button */
+        display: block; /* Show hamburger button */
     }
 
     .navbar-right {
         display: none; /* Hide links by default */
-        flex-direction: column; /* Stack links vertically */
-        gap: 1rem; /* Add spacing between links */
-        background-color: #edf5fd; /* Optional background for the dropdown */
-        position: absolute; /* Dropdown menu */
-        top: 100%; /* Position below the navbar */
-        right: 15%; /* Align with the navbar padding */
-        padding: 1rem;
-        border: 1px solid #999999;
-        border-radius: 5px;
     }
 
     .navbar-right.active {
-        display: flex; /* Show the menu when active */
+        display: flex; /* Show dropdown menu */
     }
 }
 
+/* Flex Container Styling */
 .flex {
     display: flex;
-    align-items: flex-start;
+    align-items: center; /* Consistent alignment */
     gap: 2rem;
     margin: 2rem;
-    align-items: center;
-    /* align-items: stretch; */
     flex-wrap: wrap;
 }
 
@@ -125,7 +129,7 @@ main p {
     max-height: 480px;
     width: auto;
     border-radius: 10%;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);   
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 1024px) {
@@ -142,6 +146,7 @@ main p {
     }
 }
 
+/* Section and Text Styling */
 .section {
     display: flex;
     align-items: center;
@@ -155,7 +160,6 @@ main p {
     font-weight: bold;
 }
 
-
 .flex-col {
     flex-direction: column;
 }
@@ -163,19 +167,3 @@ main p {
 .text-content {
     flex: 1;
 }
-
-/* .outline {
-    outline: 2px red dashed;
-}
-.outline1 {
-    outline: 2px green dashed;
-}
-.outline2 {
-    outline: 2px blue dashed;
-}
-.outline3 {
-    outline: 2px goldenrod dashed;
-}
-.outline4 {
-    outline: 2px pink dashed;
-} */
