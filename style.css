@@ -167,3 +167,15 @@ main p {
 .text-content {
     flex: 1;
 }
+
+@media (max-width: 425px) {
+    html {
+        font-size: calc(0.8rem + 0.3vw);
+    }
+    .navbar-right {
+        display: none; /* Hide navigation links */
+    }
+    .flex img {
+        max-height: 240px; /* Reduce image size */
+    }
+}
