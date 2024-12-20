@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +7,11 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
     <nav class="navbar">
         <div class="navbar-left">
-            <a href="index.html">Home</a>
+            <a href="index.html" class="navbar-left">Home</a>
         </div>
         <button class="hamburger" aria-label="Toggle navigation">
             ☰
@@ -25,34 +22,27 @@
         </div>
     </nav>
 
-    <main class="outline1">
-        <div class="section outline2">
-            <div class="flex">
-                <img src="./img/pf-pic.jpeg" alt="Photo of Robert Rompf">
-                <div class="flex-col text-content">
-                    <h1 class="outline">
-                        Hi, I’m Robert!
-                    </h1>
-                    <p class="outline">
-                        I’m a passionate Senior Cloud Infrastructure Engineer and Linux System Administrator with a strong drive for innovation and automation. I specialize in designing, deploying, and maintaining cloud-based infrastructures that empower businesses across industries. My focus is on delivering high availability, scalability, and security while optimizing performance and reducing operational costs.
-                    </p>
-                    <p class="outline">
-                        With extensive experience in Linux systems, I’ve honed my skills in managing complex server environments and resolving technical challenges. My primary expertise lies in AWS, where I craft cutting-edge solutions tailored to clients' needs.
-                    </p>
-                    <p class="outline">
-                        Currently, I’m transitioning into a DevOps-focused career, integrating practices like continuous integration, delivery, and deployment into my work. Automation drives my approach—I’m constantly exploring innovative ways to streamline development pipelines and foster collaboration, enabling faster and more efficient delivery of high-quality software.
-                    </p>
-                    <p class="outline">
-                        I believe the future of IT lies at the intersection of cloud infrastructure and DevOps. Whether optimizing cloud environments, automating operations, or implementing best-in-class DevOps practices, I’m committed to helping organizations succeed in a rapidly evolving tech landscape.
-                    </p>
-                    <p class="outline highlight">
-                        Let’s shape the future of technology together!
-                    </p>
-
+    <main>
+        <div class="hero-section">
+            <img src="./img/pf-pic.jpeg" alt="Photo of Robert Rompf">
+            <div class="flex-col text-content">
+                <h1>
+                    Hi, I’m Robert!
+                </h1>
+                <p>
+                    I’m a Senior Cloud Infrastructure Engineer and Linux System Administrator specializing in designing and maintaining secure, scalable, and cost-efficient cloud solutions, with a primary focus on AWS. With extensive experience in Linux systems and a passion for automation, I am transitioning into a DevOps-focused career, integrating practices like continuous integration, delivery, and deployment to streamline pipelines and enhance collaboration. I’m committed to helping organizations succeed by optimizing cloud environments and driving innovation at the intersection of cloud infrastructure and DevOps.
+                </p>
+                <p class="highlight">
+                    Let’s shape the future of technology together!
+                </p>
+                <div class="button-container">
+                    <a href="#contact" class="button get-in-touch">Get in Touch</a>
+                    <a href="CV_Robert_Rompf_2023.pdf" class="button download-cv" download>Download My CV</a>
                 </div>
             </div>
         </div>
-        <div class="outline center skills">
+
+        <div class="center skills">
             <h1>💻 Technical Skills</h1>
             <p>
                 <span class="icon">
@@ -95,10 +85,11 @@
                 <path fill="#F4511E" d="M42.2,22.1L25.9,5.8C25.4,5.3,24.7,5,24,5c0,0,0,0,0,0c-0.7,0-1.4,0.3-1.9,0.8l-3.5,3.5l4.1,4.1c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3c0,0.5-0.1,0.9-0.3,1.3l4,4c0.4-0.2,0.8-0.3,1.3-0.3c1.7,0,3,1.3,3,3s-1.3,3-3,3c-1.7,0-3-1.3-3-3c0-0.5,0.1-0.9,0.3-1.3l-4-4c-0.1,0-0.2,0.1-0.3,0.1v10.4c1.2,0.4,2,1.5,2,2.8c0,1.7-1.3,3-3,3s-3-1.3-3-3c0-1.3,0.8-2.4,2-2.8V18.8c-1.2-0.4-2-1.5-2-2.8c0-0.5,0.1-0.9,0.3-1.3l-4.1-4.1L5.8,22.1C5.3,22.6,5,23.3,5,24c0,0.7,0.3,1.4,0.8,1.9l16.3,16.3c0,0,0,0,0,0c0.5,0.5,1.2,0.8,1.9,0.8s1.4-0.3,1.9-0.8l16.3-16.3c0.5-0.5,0.8-1.2,0.8-1.9C43,23.3,42.7,22.6,42.2,22.1z"></path>
                 </svg>Git, GitHub, GitLab</p>
         </div>
-        <footer>
-            <p>© 2024 Robert Rompf. All rights reserved.</p>
-        </footer>
+
     </main>
+    <footer>
+        <p>© 2024 Robert Rompf. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 
