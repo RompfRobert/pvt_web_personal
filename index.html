@@ -1,64 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Robert Rompf</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Rompf - Cloud Infrastructure Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar-left"><a href="#home">Home</a></div>
-    <button class="hamburger" aria-label="Toggle navigation">☰</button>
-    <div class="navbar-right">
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <main>
-    <section id="home" class="hero-section">
-      <img src="./img/pf-pic.jpeg" alt="Photo of Robert Rompf">
-      <div class="text-content">
-        <h1>Hi, I’m Robert!</h1>
-        <p>
-          I’m a Senior Cloud Infrastructure Engineer and Linux System Administrator specializing in designing
-          and maintaining secure, scalable, and cost-efficient cloud solutions, with a primary focus on AWS.
-          With extensive experience in Linux systems and a passion for automation, I am transitioning into a
-          DevOps-focused career, integrating practices like continuous integration, delivery, and deployment
-          to streamline pipelines and enhance collaboration. I’m committed to helping organizations succeed by
-          optimizing cloud environments and driving innovation at the intersection of cloud infrastructure and DevOps.
-        </p>
-        <p class="highlight">Let’s shape the future of technology together!</p>
-        <div class="button-container">
-          <a href="#contact" class="button get-in-touch">Get in Touch</a>
-          <a href="CV_Robert_Rompf_2023.pdf" class="button download-cv" download>Download My CV</a>
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" data-tooltip="Switch themes like a pro">
+                    <span class="theme-icon">🌙</span>
+                </button>
+            </div>
+            <h1 class="hero-title">Robert Rompf</h1>
+            <p class="hero-subtitle">Senior Cloud Infrastructure Engineer</p>
+            <p class="hero-location">📍 Bratislava, Slovakia</p>
+            <p class="hero-tagline">Making servers behave since 2018 ✨</p>
         </div>
-      </div>
-    </section>
+    </header>
 
-    <section id="projects" class="projects">
-      <h2>Projects</h2>
-      <p>These are my projects that I have worked on.</p>
-    </section>
+    <main class="container">
+        <!-- About Section -->
+        <section class="section about" id="about">
+            <h2 class="section-title">🧠 About Me</h2>
+            <div class="about-content">
+                <p>Hey there! I'm a <span class="highlight">Linux sysadmin turned cloud engineer</span> who's obsessed with making things work better, faster, and with way less manual intervention.</p>
+                <p>I live and breathe <span class="highlight">automation, infrastructure as code, scripting, and containers</span>. My mission? Making life easier for engineers (including myself) through smart tools and eliminating those dreaded 3 AM "everything's on fire" moments.</p>
+                <p>When I'm not automating the world, you'll find me crafting CLI tools that actually make sense or writing Python scripts that don't break when you look at them funny. <span class="tooltip" data-tooltip="Seriously, they actually work!">🐍</span></p>
+            </div>
+        </section>
 
-    <section id="contact" class="contact">
-      <h2>Contact</h2>
-      <p>You can reach me via <a href="https://www.linkedin.com/in/robertrompf/">LinkedIn</a> or
-         <a href="https://github.com/rompfrobert">GitHub</a>.</p>
-      <form>
-        <input type="text" placeholder="Your name">
-        <input type="email" placeholder="Your email">
-        <textarea cols="30" rows="5" placeholder="Your message"></textarea>
-        <button type="submit" class="button get-in-touch">Send</button>
-      </form>
-    </section>
-  </main>
+        <!-- What I Do Section -->
+        <section class="section work" id="work">
+            <h2 class="section-title">⚙️ What I Do</h2>
+            <div class="work-grid">
+                <article class="work-card">
+                    <div class="work-icon">🛠️</div>
+                    <h3>Automation & Tooling</h3>
+                    <p>Build CLI tools, automate EC2 decommissioning, and create Python scripts that actually work. Because who has time for manual processes?</p>
+                    <div class="work-badge">Less clicking, more coding</div>
+                </article>
+                <article class="work-card">
+                    <div class="work-icon">🔧</div>
+                    <h3>Infrastructure Magic</h3>
+                    <p>Write Ansible playbooks, patch Linux systems, and integrate with ServiceNow. Making infrastructure dance to my tune.</p>
+                    <div class="work-badge">Infrastructure as Poetry</div>
+                </article>
+                <article class="work-card">
+                    <div class="work-icon">🚀</div>
+                    <h3>DevOps Excellence</h3>
+                    <p>Help teams adopt automation, reduce manual work, and eliminate those painful midnight interventions. Sleep is important!</p>
+                    <div class="work-badge">Sleep > Alerts</div>
+                </article>
+                <article class="work-card">
+                    <div class="work-icon">☁️</div>
+                    <h3>Cloud Wizardry</h3>
+                    <p>Design and maintain cloud infrastructure that scales, performs, and doesn't wake you up at night with alerts.</p>
+                    <div class="work-badge">Scalable & Stable</div>
+                </article>
+            </div>
+        </section>
 
-  <footer>
-    <p>© 2024 Robert Rompf. All rights reserved.</p>
-  </footer>
+        <!-- Projects Section -->
+        <section class="section projects" id="projects">
+            <h2 class="section-title">💻 Projects & Demos</h2>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-icon">🔧</span>
+                        <span class="project-path">~/projects/automation-tools</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Automation Toolkit</h3>
+                        <p>A collection of CLI tools and scripts for cloud infrastructure management. Because clicking buttons is for amateurs.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">AWS</span>
+                            <span class="tag">CLI</span>
+                        </div>
+                        <a href="https://github.com/RompfRobert" class="project-link" target="_blank" data-tooltip="Check out the code!">
+                            View on GitHub
+                        </a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-header">
+                        <span class="project-icon">🐍</span>
+                        <span class="project-path">~/projects/python-scripts</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Python Utilities</h3>
+                        <p>Various Python scripts for system administration, monitoring, and automation tasks. They actually work on the first try!</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Automation</span>
+                            <span class="tag">Monitoring</span>
+                        </div>
+                        <a href="https://github.com/RompfRobert" class="project-link" target="_blank" data-tooltip="No bugs here, promise!">
+                            View on GitHub
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-  <script src="script.js"></script>
+        <!-- Resume Section -->
+        <section class="section resume" id="resume">
+            <h2 class="section-title">📄 Resume</h2>
+            <div class="terminal">
+                <div class="terminal-header">
+                    <div class="terminal-controls">
+                        <span class="control red"></span>
+                        <span class="control yellow"></span>
+                        <span class="control green"></span>
+                    </div>
+                    <span class="terminal-title">robert@cloud-terminal</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">robert@cloud:~$</span>
+                        <span class="terminal-command">curl robert.rompf.dev/resume.pdf > ~/dream_job</span>
+                    </div>
+                    <div class="terminal-output">
+                        <div>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current</div>
+                        <div>                                 Dload  Upload   Total   Spent    Left  Speed</div>
+                        <div>100  2.1M  100  2.1M    0     0  5.2M      0 --:--:-- --:--:-- --:--:-- 5.2M</div>
+                    </div>
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">robert@cloud:~$</span>
+                        <span class="terminal-command">echo "Resume downloaded successfully! 🎉"</span>
+                    </div>
+                </div>
+            </div>
+            <div class="resume-actions">
+                <button class="cta-button" onclick="downloadResume()" data-tooltip="Get the PDF version">
+                    Download Resume
+                </button>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact" id="contact">
+            <h2 class="section-title">☕ Let's Connect</h2>
+            <div class="contact-content">
+                <p class="contact-intro">Wanna work together? Got a cool project? Or just want to chat about the latest in cloud tech?</p>
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-info">
+                        <h3>Drop me a line</h3>
+                        <a href="mailto:robert.rompf.1998@gmail.com" class="contact-email" data-tooltip="I actually read my emails!">
+                            robert.rompf.1998@gmail.com
+                        </a>
+                    </div>
+                </div>
+                <p class="contact-note">I promise to respond faster than a Kubernetes pod restart! ⚡</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2024 Robert Rompf | Built with ❤️ and way too much caffeine</p>
+                <p class="footer-tech">Powered by HTML, CSS, JS, and pure determination</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
