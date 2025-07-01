@@ -90,20 +90,6 @@ function toggleMobileMenu() {
 
 // Add some interactive hover effects
 document.addEventListener('DOMContentLoaded', function() {
-    // Skill tags hover effect
-    const skillTags = document.querySelectorAll('.skill-tag');
-    skillTags.forEach(tag => {
-        tag.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px)';
-            this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
-        });
-        
-        tag.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = 'none';
-        });
-    });
-    
     // Timeline items hover effect
     const timelineItems = document.querySelectorAll('.timeline-item');
     timelineItems.forEach(item => {
