@@ -7,11 +7,19 @@
   box-sizing: border-box;
 }
 
+/* Smooth scrolling with snap */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
 body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
   color: hsl(220, 10%, 20%);
   overflow-x: hidden;
+  scroll-snap-type: y mandatory;
 }
 
 h1,
@@ -37,6 +45,7 @@ h1,
   width: 100%;
   z-index: 1000;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .header .container {
@@ -109,10 +118,12 @@ h1,
 /* Hero Section */
 .hero {
   background: linear-gradient(135deg, hsl(240, 60%, 98%) 0%, hsl(240, 60%, 96%) 100%);
-  padding: 120px 0 80px;
-  min-height: 100vh;
+  padding: 0;
+  height: 100vh;
   display: flex;
   align-items: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .hero-content {
@@ -301,11 +312,13 @@ h1,
 
 /* About Section */
 .about {
-  padding: 80px 0;
+  padding: 0;
   background: hsl(0, 0%, 100%);
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .about-content {
@@ -347,8 +360,13 @@ h1,
 
 /* Experience Section */
 .experience {
-  padding: 80px 0;
+  padding: 0;
   background: linear-gradient(135deg, hsl(240, 100%, 99%) 0%, hsl(240, 100%, 95%) 100%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .timeline {
@@ -421,8 +439,13 @@ h1,
 
 /* Skills Section */
 .skills {
-  padding: 80px 0;
+  padding: 0;
   background: hsl(0, 0%, 100%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .skills-grid {
@@ -460,34 +483,6 @@ h1,
   transform: translate(-2px, -2px);
   box-shadow: 6px 6px 0px hsl(0, 0%, 0%);
 }
-
-/* .skill-tag.expert {
-  background: linear-gradient(135deg, hsl(120, 100%, 40%) 0%, hsl(120, 100%, 35%) 100%);
-  color: hsl(0, 0%, 100%);
-  border: 2px solid hsl(0, 0%, 0%);
-  box-shadow: 3px 3px 0px hsl(0, 0%, 0%);
-}
-
-.skill-tag.intermediate {
-  background: linear-gradient(135deg, hsl(36, 100%, 50%) 0%, hsl(36, 100%, 45%) 100%);
-  color: hsl(0, 0%, 100%);
-  border: 2px solid hsl(0, 0%, 0%);
-  box-shadow: 3px 3px 0px hsl(0, 0%, 0%);
-}
-
-.skill-tag.foundational {
-  background: linear-gradient(135deg, hsl(207, 90%, 54%) 0%, hsl(207, 90%, 49%) 100%);
-  color: hsl(0, 0%, 100%);
-  border: 2px solid hsl(0, 0%, 0%);
-  box-shadow: 3px 3px 0px hsl(0, 0%, 0%);
-}
-
-.skill-tag.proficient {
-  background: linear-gradient(135deg, hsl(291, 64%, 42%) 0%, hsl(291, 64%, 37%) 100%);
-  color: hsl(0, 0%, 100%);
-  border: 2px solid hsl(0, 0%, 0%);
-  box-shadow: 3px 3px 0px hsl(0, 0%, 0%);
-} */
 
 /* Certifications */
 .certifications {
@@ -536,9 +531,14 @@ h1,
 
 /* Contact Section */
 .contact {
-  padding: 80px 0;
+  padding: 0;
   background: linear-gradient(135deg, hsl(240, 33%, 13%) 0%, hsl(240, 20%, 20%) 100%);
   color: hsl(0, 0%, 100%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .contact .section-title {
@@ -663,6 +663,38 @@ h1,
   color: hsl(0, 0%, 40%);
 }
 
+/* Scroll indicator */
+.scroll-indicator {
+  position: fixed;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.scroll-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: hsla(0, 0%, 100%, 0.3);
+  border: 2px solid hsl(0, 0%, 100%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-dot.active {
+  background: hsl(230, 77%, 65%);
+  transform: scale(1.2);
+}
+
+.scroll-dot:hover {
+  background: hsl(230, 77%, 65%);
+  transform: scale(1.1);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .nav {
@@ -672,6 +704,7 @@ h1,
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
+    padding: 2rem 0;
   }
 
   .main-title,
@@ -685,6 +718,9 @@ h1,
 
   .skills-grid {
     grid-template-columns: 1fr;
+    max-height: 70vh;
+    overflow-y: auto;
+    scroll-snap-type: none;
   }
 
   .contact-links {
@@ -713,6 +749,46 @@ h1,
   .timeline-marker {
     left: 5px;
   }
+
+  html {
+    scroll-snap-type: y proximity;
+  }
+
+  body {
+    scroll-snap-type: y proximity;
+  }
+
+  .hero,
+  .about,
+  .experience,
+  .skills,
+  .contact {
+    height: 100vh;
+    min-height: 100vh;
+    scroll-snap-align: start;
+  }
+
+  /* Adjust content spacing for mobile */
+
+  .about-content,
+  .contact-content {
+    padding: 2rem 0;
+  }
+
+  .timeline {
+    max-height: 70vh;
+    overflow-y: auto;
+    scroll-snap-type: none;
+  }
+
+  .scroll-indicator {
+    right: 1rem;
+  }
+
+  .scroll-dot {
+    width: 10px;
+    height: 10px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -736,6 +812,15 @@ h1,
   .get-in-touch-final {
     padding: 1rem 2rem;
     font-size: 1rem;
+  }
+
+  .hero,
+  .about,
+  .experience,
+  .skills,
+  .contact {
+    height: 100vh;
+    min-height: 100vh;
   }
 }
 
