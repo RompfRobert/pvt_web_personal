@@ -143,9 +143,6 @@ h1,
   width: 100%;
 }
 
-.hero-text {
-}
-
 .greeting {
   display: block;
   font-size: 1.5rem;
@@ -792,7 +789,7 @@ h1,
   /* Hero section mobile adjustments */
   .hero {
     padding: 6rem 0 2rem;
-    min-height: auto;
+    /* min-height: auto; */
   }
 
   .greeting {
@@ -844,7 +841,7 @@ h1,
   }
 
   .stats {
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
     gap: 1.5rem;
     margin-top: 2rem;
   }
