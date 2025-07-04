@@ -7,11 +7,21 @@
   box-sizing: border-box;
 }
 
-/* Smooth scrolling with snap */
+/* Smooth scrolling with conditional snap */
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
+}
+
+/* Enable snap scrolling only on desktop */
+@media (min-width: 769px) {
+  html {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+  }
+
+  body {
+    scroll-snap-type: y mandatory;
+  }
 }
 
 body {
@@ -19,7 +29,6 @@ body {
   line-height: 1.6;
   color: hsl(220, 10%, 20%);
   overflow-x: hidden;
-  scroll-snap-type: y mandatory;
 }
 
 h1,
@@ -119,7 +128,7 @@ h1,
 .hero {
   background: linear-gradient(135deg, hsl(240, 60%, 98%) 0%, hsl(240, 60%, 96%) 100%);
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   scroll-snap-align: start;
@@ -131,6 +140,10 @@ h1,
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  width: 100%;
+}
+
+.hero-text {
 }
 
 .greeting {
@@ -172,6 +185,7 @@ h1,
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
+  justify-content: center;
 }
 
 .primary-button {
@@ -312,9 +326,9 @@ h1,
 
 /* About Section */
 .about {
-  padding: 0;
+  padding: 4rem 0;
   background: hsl(0, 0%, 100%);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   scroll-snap-align: start;
@@ -360,9 +374,9 @@ h1,
 
 /* Experience Section */
 .experience {
-  padding: 0;
+  padding: 4rem 0;
   background: linear-gradient(135deg, hsl(240, 100%, 99%) 0%, hsl(240, 100%, 95%) 100%);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   scroll-snap-align: start;
@@ -439,7 +453,7 @@ h1,
 
 /* Technical Skills Section */
 .skills {
-  padding: 0;
+  padding: 4rem 0;
   background: hsl(0, 0%, 100%);
   min-height: 100vh;
   display: flex;
@@ -490,7 +504,6 @@ h1,
 .certificates {
   padding: 4rem 0;
   background: linear-gradient(135deg, hsl(240, 100%, 99%) 0%, hsl(240, 100%, 95%) 100%);
-  /* background: linear-gradient(135deg, #e8d5ff 0%, #d4b3ff 100%); */
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -535,8 +548,8 @@ h1,
   display: flex;
   justify-content: center;
   align-items: center;
-      position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
 .badge-image {
@@ -548,7 +561,6 @@ h1,
   padding: 10px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
-  /* border: 4px solid rgba(255, 255, 255, 0.8); */
 }
 
 .badge-image:hover {
@@ -557,82 +569,33 @@ h1,
 }
 
 .badge-in-progress {
-    filter: grayscale(100%) brightness(0.8) opacity(0.7);
-    position: relative;
+  filter: grayscale(100%) brightness(0.8) opacity(0.7);
+  position: relative;
 }
 
 .badge-wip-label {
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #888;
-    color: #fff;
-    font-size: 0.75rem;
-    padding: 2px 8px;
-    border-radius: 8px;
-    opacity: 0.85;
-    pointer-events: none;
-    z-index: 2;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-/* Responsive adjustments for certificates */
-@media (max-width: 1024px) {
-  .recognition-badges {
-    gap: 2rem;
-  }
-
-  .badge-image {
-    width: 160px;
-    height: 160px;
-  }
-
-  .recognition-title {
-    font-size: 3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .recognition-badges {
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .badge-image {
-    width: 180px;
-    height: 180px;
-  }
-
-  .recognition-title {
-    font-size: 2.5rem;
-  }
-
-  .title-outline {
-    display: block;
-    margin-right: 0;
-    margin-bottom: 0.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .badge-image {
-    width: 150px;
-    height: 150px;
-  }
-
-  .recognition-title {
-    font-size: 2rem;
-  }
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #888;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 8px;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 2;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 /* Contact Section */
 .contact {
-  padding: 0;
+  padding: 4rem 0;
   background: linear-gradient(135deg, hsl(240, 33%, 13%) 0%, hsl(240, 20%, 20%) 100%);
   color: hsl(0, 0%, 100%);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   scroll-snap-align: start;
@@ -761,7 +724,7 @@ h1,
   color: hsl(0, 0%, 40%);
 }
 
-/* Scroll indicator */
+/* Scroll indicator - only show on desktop */
 .scroll-indicator {
   position: fixed;
   right: 2rem;
@@ -793,55 +756,111 @@ h1,
   transform: scale(1.1);
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .cert-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-}
-
+/* Mobile Responsive Design */
 @media (max-width: 768px) {
+  /* Hide code window on mobile */
+  .hero-visual {
+    display: none;
+  }
+
+  /* Change hero content to single column on mobile */
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  /* Hide scroll indicator on mobile */
+  .scroll-indicator {
+    display: none;
+  }
+
+  /* Header adjustments */
   .nav {
     display: none;
   }
 
-  .hero-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-    padding: 2rem 0;
+  .header .container {
+    justify-content: space-between;
+  }
+
+  .cta-button {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Hero section mobile adjustments */
+  .hero {
+    padding: 6rem 0 2rem;
+    min-height: auto;
+  }
+
+  .greeting {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
   }
 
   .main-title,
   .accent-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    line-height: 1.2;
   }
 
-  .stats {
-    grid-template-columns: 1fr;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .cert-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .contact-links {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .language-flags {
-    flex-direction: column;
-    align-items: center;
+  .hero-subtitle {
+    font-size: 1rem;
+    margin: 1.5rem 0;
   }
 
   .hero-cta {
     flex-direction: column;
     align-items: center;
+    gap: 0.75rem;
+  }
+
+  .primary-button,
+  .secondary-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  /* Section titles */
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  /* About section mobile */
+  .about {
+    padding: 3rem 0;
+    min-height: auto;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+  }
+
+  /* Experience section mobile */
+  .experience {
+    padding: 3rem 0;
+    min-height: auto;
   }
 
   .timeline::before {
@@ -850,33 +869,128 @@ h1,
 
   .timeline-item {
     padding-left: 50px;
+    margin-bottom: 2rem;
   }
 
   .timeline-marker {
     left: 5px;
+    width: 16px;
+    height: 16px;
   }
 
-  .scroll-indicator {
-    right: 1rem;
+  .timeline-content h3 {
+    font-size: 1.1rem;
   }
 
-  .scroll-dot {
-    width: 10px;
-    height: 10px;
+  .company {
+    font-size: 0.9rem;
   }
 
-  /* Ensure sections maintain minimum height on mobile */
-  .hero,
-  .about,
-  .experience,
-  .skills,
-  .certificates,
+  .timeline-content li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  /* Skills section mobile */
+  .skills {
+    padding: 3rem 0;
+    min-height: auto;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .skill-category h3 {
+    font-size: 1.1rem;
+  }
+
+  .skill-tag {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* Certificates section mobile */
+  .certificates {
+    padding: 3rem 0;
+    min-height: auto;
+  }
+
+  .recognition-badges {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .badge-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .badge-wip-label {
+    font-size: 0.65rem;
+    padding: 1px 6px;
+  }
+
+  /* Contact section mobile */
   .contact {
-    min-height: 100vh;
-    padding: 2rem 0;
+    padding: 3rem 0;
+    min-height: auto;
+  }
+
+  .contact-text p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .languages h4 {
+    font-size: 1rem;
+  }
+
+  .language-flags {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .language {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .contact-link {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 200px;
+    justify-content: center;
+  }
+
+  .get-in-touch-final {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    margin: 1rem 0 2rem 0;
+  }
+
+  /* Footer mobile */
+  .footer {
+    padding: 1.5rem 0;
+  }
+
+  .footer p {
+    font-size: 0.85rem;
   }
 }
 
+/* Extra small mobile devices */
 @media (max-width: 480px) {
   .container {
     padding: 0 15px;
@@ -884,30 +998,37 @@ h1,
 
   .main-title,
   .accent-title {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+  }
+
+  .timeline-content li {
+    font-size: 0.85rem;
+  }
+
+  .skill-tag {
+    font-size: 0.75rem;
+  }
+
+  .badge-image {
+    width: 120px;
+    height: 120px;
   }
 
   .get-in-touch-final {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-  }
-
-  .cert-card {
-    padding: 1.5rem;
-  }
-
-  .cert-icon,
-  .cert-placeholder {
-    width: 100px;
-    height: 100px;
-  }
-
-  .cert-icon-text {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
+    padding: 0.8rem 1.5rem;
   }
 }
 
