@@ -1,3 +1,32 @@
+// Terminal Navigation Typing Animation
+function initTerminalNav() {
+  const terminalText = document.getElementById("terminal-text")
+  const text = "cd /home/"
+  let index = 0
+
+  function typeText() {
+    if (index < text.length) {
+      terminalText.textContent += text.charAt(index)
+      index++
+      setTimeout(typeText, 150) // Slightly faster typing
+    }
+  }
+
+  // Start typing animation after a short delay
+  setTimeout(typeText, 300)
+}
+
+// Scroll to top function
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
+}
+
+// Make scrollToTop available globally
+window.scrollToTop = scrollToTop
+
 // Enhanced smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
@@ -16,11 +45,13 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 window.addEventListener("scroll", () => {
   const header = document.querySelector(".header")
   if (window.scrollY > 50) {
-    header.style.background = "rgba(26, 26, 46, 0.95)"
-    header.style.backdropFilter = "blur(10px)"
+    header.style.background = "rgba(255, 255, 255, 0.95)"
+    header.style.backdropFilter = "blur(15px)"
+    header.style.borderBottom = "1px solid hsl(0, 0%, 85%)"
   } else {
-    header.style.background = "rgba(26, 26, 46, 0.8)"
-    header.style.backdropFilter = "blur(5px)"
+    header.style.background = "hsl(0, 0%, 100%)"
+    header.style.backdropFilter = "blur(10px)"
+    header.style.borderBottom = "1px solid hsl(0, 0%, 90%)"
   }
 })
 
@@ -209,6 +240,9 @@ function handleSwipe() {
 
 // Initialize everything when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
+  // Initialize terminal navigation
+  initTerminalNav()
+
   // Create scroll indicator (only on desktop)
   createScrollIndicator()
 

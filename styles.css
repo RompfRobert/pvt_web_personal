@@ -47,20 +47,82 @@ h1,
 
 /* Header */
 .header {
-  background: hsl(240, 33%, 13%);
+  background: hsl(0, 0%, 100%);
   padding: 1rem 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
   transition: all 0.3s ease;
+  border-bottom: 1px solid hsl(0, 0%, 90%);
   backdrop-filter: blur(10px);
 }
 
-.header .container {
+.header-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Terminal Navigation */
+.terminal-nav {
+  display: flex;
+  align-items: center;
+  font-family: "Monaco", "Menlo", "Consolas", monospace;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.25rem 0;
+}
+
+.terminal-nav:hover {
+  opacity: 0.7;
+}
+
+.terminal-prompt {
+  color: hsl(0, 0%, 40%);
+  font-weight: 500;
+  margin-right: 0.25rem;
+}
+
+.terminal-text {
+  color: hsl(0, 0%, 20%);
+  font-weight: 500;
+}
+
+.terminal-cursor {
+  color: hsl(14, 100%, 57%); /* Orange/red color like in the reference */
+  font-weight: bold;
+  margin-left: 1px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Typing animation */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2s steps(8, end);
 }
 
 .logo-text {
@@ -76,19 +138,21 @@ h1,
 .nav {
   display: flex;
   gap: 2rem;
+  margin-left: auto;
 }
 
 .nav-link {
-  color: hsl(0, 0%, 80%);
+  color: hsl(0, 0%, 40%);
   text-decoration: none;
   font-weight: 500;
+  font-size: 0.9rem;
   transition: color 0.3s ease;
   position: relative;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 20%);
 }
 
 .nav-link.active::after {
@@ -102,37 +166,20 @@ h1,
 }
 
 .cta-button {
-  background: linear-gradient(135deg, hsl(230, 77%, 65%) 0%, hsl(266, 35%, 46%) 100%);
+  background: hsl(14, 100%, 57%);
   color: hsl(0, 0%, 100%);
-  padding: 0.75rem 1.5rem;
-  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 0.9rem;
   transition: all 0.3s ease;
-  border: 3px solid hsl(0, 0%, 0%);
-  box-shadow: 4px 4px 0px hsl(0, 0%, 0%);
-  position: relative;
+  border: none;
 }
 
 .cta-button:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px hsl(0, 0%, 0%);
-}
-
-.cta-button:active {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px hsl(0, 0%, 0%);
-}
-
-/* Hero Section */
-.hero {
-  background: linear-gradient(135deg, hsl(240, 60%, 98%) 0%, hsl(240, 60%, 96%) 100%);
-  padding: 0;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  background: hsl(14, 100%, 52%);
+  transform: translateY(-1px);
 }
 
 .hero-content {
@@ -182,7 +229,7 @@ h1,
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
-  justify-content: center;
+  justify-content: left;
 }
 
 .primary-button {
@@ -231,6 +278,17 @@ h1,
 .secondary-button:active {
   transform: translate(2px, 2px);
   box-shadow: 4px 4px 0px hsl(0, 0%, 0%);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, hsl(240, 60%, 98%) 0%, hsl(240, 60%, 96%) 100%);
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 /* Code Window */
@@ -773,12 +831,24 @@ h1,
   }
 
   /* Header adjustments */
-  .nav {
-    display: none;
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
   }
 
-  .header .container {
-    justify-content: space-between;
+  .nav {
+    margin-left: 0;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .terminal-nav {
+    font-size: 0.8rem;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
   }
 
   .cta-button {
@@ -1026,6 +1096,15 @@ h1,
   .get-in-touch-final {
     font-size: 0.9rem;
     padding: 0.8rem 1.5rem;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .header-content {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
 
