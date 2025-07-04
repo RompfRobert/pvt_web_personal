@@ -118,7 +118,7 @@ function animateCodeWindow() {
 
 // Create scroll indicator dots
 function createScrollIndicator() {
-  const sections = ["home", "about", "experience", "skills", "contact"]
+  const sections = ["home", "about", "experience", "skills", "certificates", "contact"]
   const indicator = document.createElement("div")
   indicator.className = "scroll-indicator"
 
@@ -140,7 +140,7 @@ function createScrollIndicator() {
 
 // Keyboard navigation for accessibility
 document.addEventListener("keydown", (e) => {
-  const sections = ["home", "about", "experience", "skills", "contact"]
+  const sections = ["home", "about", "experience", "skills", "certificates", "contact"]
   const currentSection = getCurrentSection()
   const currentIndex = sections.indexOf(currentSection)
 
@@ -189,7 +189,7 @@ document.addEventListener("touchend", (e) => {
 
 function handleSwipe() {
   const swipeThreshold = 50
-  const sections = ["home", "about", "experience", "skills", "contact"]
+  const sections = ["home", "about", "experience", "skills", "certificates", "contact"]
   const currentSection = getCurrentSection()
   const currentIndex = sections.indexOf(currentSection)
 
